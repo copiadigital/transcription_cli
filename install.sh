@@ -182,7 +182,7 @@ if ask_yes_no "Would you like to install the Python dependencies?"; then
     SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
     if [[ -f "$SCRIPT_DIR/requirements.txt" ]]; then
-        pip3 install -r "$SCRIPT_DIR/requirements.txt"
+        pip3 install --upgrade -r "$SCRIPT_DIR/requirements.txt"
         print_success "Python dependencies installed successfully"
         INSTALLED_ITEMS+=("Python dependencies (openai-whisper)")
     else
